@@ -83,7 +83,7 @@ class ProductsController extends Controller
     {
         $Products = Products::findOrFail($request->pro_id);
         $Products->delete();
-        session()->flash('delete', 'تم حذف المنتج بنجاح');
+        session()->flash('delete', 'Product deleted successfully   ');
         return back();
     }
 }

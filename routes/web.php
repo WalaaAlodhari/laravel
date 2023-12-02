@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,13 +34,25 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 
-Route::resource('invoices','\App\Http\Controllers\InvoicesController');
+//Route::resource('invoices','\App\Http\Controllers\InvoicesController');
 
 Route::resource('sections','\App\Http\Controllers\SectionsController');
 
 Route::resource('products','\App\Http\Controllers\ProductsController');
 
-Route::get('/section/{id}','InvoicesController@getproducts');
+Route::get('/section/{id}','\App\Http\Controllers\InvoicesController@getproducts');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::get('/payment', function (){
+
+    return(new App\Http\Controllers\payment\PaymentService())->pay(new App\Http\Controllers\payment\StripePaymentMethod());
+
+
+});
+
+
+//
+//
+//Route::get('/send', [\App\Http\Controllers\liskov\EmailController::class,'index']);

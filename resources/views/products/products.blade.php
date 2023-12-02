@@ -97,11 +97,11 @@
                                                 data-name="{{ $product->product_name }}" data-pro_id="{{ $product->id }}"
                                                 data-section_name="{{ $product->section->section_name }}"
                                                 data-description="{{ $product->description }}" data-toggle="modal"
-                                                data-target="#edit_Product">تعديل</button>
+                                                data-target="#edit_Product">edit</button>
 
                                         <button class="btn btn-outline-danger btn-sm " data-pro_id="{{ $product->id }}"
                                                 data-product_name="{{ $product->product_name }}" data-toggle="modal"
-                                                data-target="#modaldemo9">حذف</button>
+                                                data-target="#modaldemo9">delete</button>
 
                                         <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
                                            data-name="{{$product->product_name}}"
